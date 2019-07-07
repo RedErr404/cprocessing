@@ -37,7 +37,7 @@
 
 #include <GL/glew.h>
 #include <GL/gl.h>
-#include <GL/glfw.h>
+#include <GLFW/glfw3.h>
 #include <GL/glu.h>
 #include <FreeImage.h>
 
@@ -76,10 +76,10 @@ namespace cprocessing {
 	// Global variables (defined in file cprocessing.cpp)
 	//
 	extern ArrayList<std::string> args;
-	extern int mouseX;  		/**< Mouse x coordinate*/
-	extern int mouseY;  		/**< Mouse y coordinate*/
-	extern int pmouseX; 		/**< Previous mouse x coordinate*/
-	extern int pmouseY; 		/**< Previous mouse y coordinate*/
+	extern double mouseX;  		/**< Mouse x coordinate*/
+	extern double mouseY;  		/**< Mouse y coordinate*/
+	extern double pmouseX; 		/**< Previous mouse x coordinate*/
+	extern double pmouseY; 		/**< Previous mouse y coordinate*/
 	extern bool mousePressed; 	/**< Whether any mouse button is pressed*/
 	extern int mouseButton; 	/**< Which button is pressed*/
 	extern bool keyPressed; 	/**< Whether a key was pressed*/
@@ -92,13 +92,14 @@ namespace cprocessing {
 	extern unsigned config; 	/**< configuration flags*/
 	extern int framerate; 		/**< Frames per second*/
 	extern double framedelay;	/**< Delay in seconds between frame*/
-    extern int frameCount; 		/**< frames since start*/
+	extern int frameCount; 		/**< frames since start*/
 	extern std::vector<Style> styles; /**< Stack of styles*/
 	extern PixelColorBuffer pixels; /**< virtual array of pixels to get and put from (operated thru backbuffer) */
 	extern PImage screenBuffer; // ^^
 	extern bool looping;    	/**< true makes display call itself*/
 	extern bool redrawflag;		//to draw next frame immediately
 	extern int initialized; 	//glfw initialized yet
+	extern GLFWwindow* win;
   
 	
 	void redraw();
